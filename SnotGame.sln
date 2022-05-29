@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnotGame", "SnotGame\SnotGame.csproj", "{FA63FBBC-5972-4D31-941F-93557F762A7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA63FBBC-5972-4D31-941F-93557F762A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA63FBBC-5972-4D31-941F-93557F762A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA63FBBC-5972-4D31-941F-93557F762A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA63FBBC-5972-4D31-941F-93557F762A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA6AF635-DD3E-4239-8D2E-1F84F1C96E9C}
+	EndGlobalSection
+EndGlobal

@@ -25,7 +25,7 @@ namespace SnotGame.Classes
             possibleLocations = new[] { Game.RoofBottom, Game.FloorTop };
             length = bricks.Length;
             count = 0;
-            maxCount = 2;
+            maxCount = 3;
             interval = 3;
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -10,50 +11,55 @@ namespace SnotGame.Classes
     {
         public static HashSet<(Picture, Point)> ToDraw = new HashSet<(Picture, Point)>();
         private static HashSet<(Picture, Point)> draw = new HashSet<(Picture, Point)>();
-        public static readonly Image Backgorund = Image.FromFile(@"..\..\images\background.png");
+
+        private static readonly string path = File.Exists(@"images\background.png") ? @"images\" : @"..\..\images\";
+
+        public static readonly Image Backgorund = Image.FromFile(path + "background.png");
         private static readonly Dictionary<Picture, Image> Pictures = new Dictionary<Picture, Image>
         {
-            [Picture.GreenSnotStock] = Image.FromFile(@"..\..\images\greenSnot.png"),
-            [Picture.GreenSnotRight] = Image.FromFile(@"..\..\images\greenSnot1.png"),
-            [Picture.GreenSnotDown] = Image.FromFile(@"..\..\images\greenSnot2.png"),
-            [Picture.GreenSnotLeft] = Image.FromFile(@"..\..\images\greenSnot3.png"),
-            [Picture.YellowSnotStock] = Image.FromFile(@"..\..\images\yellowSnot.png"),
-            [Picture.YellowSnotRight] = Image.FromFile(@"..\..\images\yellowSnot1.png"),
-            [Picture.YellowSnotDown] = Image.FromFile(@"..\..\images\yellowSnot2.png"),
-            [Picture.YellowSnotLeft] = Image.FromFile(@"..\..\images\yellowSnot3.png"),
-            [Picture.SuitStock] = Image.FromFile(@"..\..\images\suit.png"),
-            [Picture.Lights] = Image.FromFile(@"..\..\images\lights.png"),
-            [Picture.UfoStock] = Image.FromFile(@"..\..\images\ufo.png"),
-            [Picture.UfoDown] = Image.FromFile(@"..\..\images\ufo2.png"),
-            [Picture.UfoUp] = Image.FromFile(@"..\..\images\ufo1.png"),
-            [Picture.UfoLeft] = Image.FromFile(@"..\..\images\ufo3.png"),
-            [Picture.UfoRight] = Image.FromFile(@"..\..\images\ufo4.png"),
-            [Picture.Brick] = Image.FromFile(@"..\..\images\brick.png"),
-            [Picture.BrickVertical2] = Image.FromFile(@"..\..\images\brickVertical2.png"),
-            [Picture.BrickVertical3] = Image.FromFile(@"..\..\images\brickVertical3.png"),
-            [Picture.BrickVertical4] = Image.FromFile(@"..\..\images\brickVertical4.png"),
-            [Picture.BrickVertical5] = Image.FromFile(@"..\..\images\brickVertical5.png"),
-            [Picture.BrickVertical6] = Image.FromFile(@"..\..\images\brickVertical6.png"),
-            [Picture.BrickHorizontal2] = Image.FromFile(@"..\..\images\brickHorizontal2.png"),
-            [Picture.BrickHorizontal3] = Image.FromFile(@"..\..\images\brickHorizontal3.png"),
-            [Picture.BrickHorizontal4] = Image.FromFile(@"..\..\images\brickHorizontal4.png"),
-            [Picture.Pipe1] = Image.FromFile(@"..\..\images\pipe.png"),
-            [Picture.Pipe2] = Image.FromFile(@"..\..\images\pipe2.png"),
-            [Picture.Pipe3] = Image.FromFile(@"..\..\images\pipe3.png"),
-            [Picture.Pipe4] = Image.FromFile(@"..\..\images\pipe4.png"),
-            [Picture.Pipe5] = Image.FromFile(@"..\..\images\pipe5.png"),
-            [Picture.Pipe6] = Image.FromFile(@"..\..\images\pipe6.png"),
-            [Picture.Pipe7] = Image.FromFile(@"..\..\images\pipe7.png"),
-            [Picture.Pipe8] = Image.FromFile(@"..\..\images\pipe8.png"),
-            [Picture.Fireball1] = Image.FromFile(@"..\..\images\fireball.png"),
-            [Picture.Fireball2] = Image.FromFile(@"..\..\images\fireball2.png"),
-            [Picture.Fireball3] = Image.FromFile(@"..\..\images\fireball3.png"),
-            [Picture.Fence] = Image.FromFile(@"..\..\images\fence.png"),
-            [Picture.Evo1] = Image.FromFile(@"..\..\images\evo1.png"),
-            [Picture.Evo2] = Image.FromFile(@"..\..\images\evo2.png"),
-            [Picture.Evo3] = Image.FromFile(@"..\..\images\evo3.png"),
-            [Picture.Evo4] = Image.FromFile(@"..\..\images\evo4.png"),
+            [Picture.GreenSnotStock] = Image.FromFile(path + "greenSnot.png"),
+            [Picture.GreenSnotRight] = Image.FromFile(path + "greenSnot1.png"),
+            [Picture.GreenSnotDown] = Image.FromFile(path + "greenSnot2.png"),
+            [Picture.GreenSnotLeft] = Image.FromFile(path + "greenSnot3.png"),
+            [Picture.YellowSnotStock] = Image.FromFile(path + "yellowSnot.png"),
+            [Picture.YellowSnotRight] = Image.FromFile(path + "yellowSnot1.png"),
+            [Picture.YellowSnotDown] = Image.FromFile(path + "yellowSnot2.png"),
+            [Picture.YellowSnotLeft] = Image.FromFile(path + "yellowSnot3.png"),
+            [Picture.SuitStock] = Image.FromFile(path + "suit.png"),
+            [Picture.Lights] = Image.FromFile(path + "lights.png"),
+            [Picture.UfoStock] = Image.FromFile(path + "ufo.png"),
+            [Picture.UfoDown] = Image.FromFile(path + "ufo2.png"),
+            [Picture.UfoUp] = Image.FromFile(path + "ufo1.png"),
+            [Picture.UfoLeft] = Image.FromFile(path + "ufo3.png"),
+            [Picture.UfoRight] = Image.FromFile(path + "ufo4.png"),
+            [Picture.Brick] = Image.FromFile(path + "brick.png"),
+            [Picture.BrickVertical2] = Image.FromFile(path + "brickVertical2.png"),
+            [Picture.BrickVertical3] = Image.FromFile(path + "brickVertical3.png"),
+            [Picture.BrickVertical4] = Image.FromFile(path + "brickVertical4.png"),
+            [Picture.BrickVertical5] = Image.FromFile(path + "brickVertical5.png"),
+            [Picture.BrickVertical6] = Image.FromFile(path + "brickVertical6.png"),
+            [Picture.BrickHorizontal2] = Image.FromFile(path + "brickHorizontal2.png"),
+            [Picture.BrickHorizontal3] = Image.FromFile(path + "brickHorizontal3.png"),
+            [Picture.BrickHorizontal4] = Image.FromFile(path + "brickHorizontal4.png"),
+            [Picture.Pipe1] = Image.FromFile(path + "pipe.png"),
+            [Picture.Pipe2] = Image.FromFile(path + "pipe2.png"),
+            [Picture.Pipe3] = Image.FromFile(path + "pipe3.png"),
+            [Picture.Pipe4] = Image.FromFile(path + "pipe4.png"),
+            [Picture.Pipe5] = Image.FromFile(path + "pipe5.png"),
+            [Picture.Pipe6] = Image.FromFile(path + "pipe6.png"),
+            [Picture.Pipe7] = Image.FromFile(path + "pipe7.png"),
+            [Picture.Pipe8] = Image.FromFile(path + "pipe8.png"),
+            [Picture.Fireball1] = Image.FromFile(path + "fireball.png"),
+            [Picture.Fireball2] = Image.FromFile(path + "fireball2.png"),
+            [Picture.Fireball3] = Image.FromFile(path + "fireball3.png"),
+            [Picture.Fence] = Image.FromFile(path + "fence.png"),
+            [Picture.Evo1] = Image.FromFile(path + "evo1.png"),
+            [Picture.Evo2] = Image.FromFile(path + "evo2.png"),
+            [Picture.Evo3] = Image.FromFile(path + "evo3.png"),
+            [Picture.Evo4] = Image.FromFile(path + "evo4.png"),
         };
+
+        //private static string GetPath() => ;
 
         public static int GetWidth(Picture picture) => Pictures[picture].Width;
 
@@ -64,7 +70,7 @@ namespace SnotGame.Classes
         private static readonly Dictionary<Hero, string> hints = new Dictionary<Hero, string>
         {
             [Hero.GreenSnot] = "Spase - прыжок\nДвойное нажатие - двойной прыжок",
-            [Hero.YellowSnot] = "Space - прыжок\nУдержать - вернуться обратно",
+            [Hero.YellowSnot] = "Space - прыжок на противоположную сторону",
             [Hero.Suit] = "W - вверх",
             [Hero.UFO] = "W - вверх\nA - влево\nS - вниз\nD - вправо"
         };

@@ -19,8 +19,8 @@ namespace SnotGame.Classes
         public const int UfoTopBlunder = 950;
         public const int UfoBottomBlunder = 340;
 
-        public const int VerticaLBrickMove = 33;
         public const int HorizontalBrickMove = 24;
+        public const int VerticaLBrickMove = 33;
         public const int PipeMove = 15;
         public const int FireballMove = 50;
 

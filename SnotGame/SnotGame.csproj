@@ -54,10 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Barriers.cs" />
+    <Compile Include="Classes\Barriers_Should.cs" />
     <Compile Include="Classes\Controller.cs" />
     <Compile Include="Classes\Drawer.cs" />
     <Compile Include="Classes\Evolution.cs" />
+    <Compile Include="Classes\Evolution_Should.cs" />
     <Compile Include="Classes\Fence.cs" />
+    <Compile Include="Classes\Fence_Should.cs" />
     <Compile Include="Classes\Fireball.cs" />
     <Compile Include="Classes\Game.cs" />
     <Compile Include="Classes\GreenSnot.cs" />
@@ -67,9 +70,11 @@
     <Compile Include="Classes\IBarrier.cs" />
     <Compile Include="Classes\IPlayer.cs" />
     <Compile Include="Classes\Map.cs" />
+    <Compile Include="Classes\Map_Should.cs" />
     <Compile Include="Classes\Picture.cs" />
     <Compile Include="Classes\Pipe.cs" />
     <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\Player_Should.cs" />
     <Compile Include="Classes\Suit.cs" />
     <Compile Include="Classes\Suit_Should.cs" />
     <Compile Include="Classes\UFO.cs" />
@@ -107,6 +112,129 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\suit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\UFO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\UFO1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\UFO2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\UFO3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\UFO4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\yellowSnot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\yellowSnot1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\yellowSnot2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\yellowSnot3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickHorizontal2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickHorizontal3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickHorizontal4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickVertical2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickVertical3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickVertical4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickVertical5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\brickVertical6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\evo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\evo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\evo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\evo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\fence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\fireball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\fireball2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\fireball3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\greenSnot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\greenSnot1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\greenSnot2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\greenSnot3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\lights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\pipe5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

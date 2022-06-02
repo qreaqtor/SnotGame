@@ -6,7 +6,6 @@ namespace SnotGame.Classes
     public class YellowSnot : IPlayer
     {
         private bool jump;
-        private bool jumpBack;
         private int jumpCount;
         private int boostStep;
         private int boost;
@@ -15,7 +14,6 @@ namespace SnotGame.Classes
         public YellowSnot()
         {
             jump = false;
-            jumpBack = true;
             jumpLength = 9;
             jumpCount = 0;
             boostStep = -20;
@@ -35,13 +33,6 @@ namespace SnotGame.Classes
                     jump = true;
                     jumpCount = 0;
                 }
-                else if (jumpBack && jumpCount == 4)
-                {
-                    jumpBack = false;
-                    boostStep *= -1;
-                    boost = boostStep > 0 ? 20 : -20;
-                    jumpCount = jumpLength - jumpCount;
-                }
             }
             if (jump && jumpCount < jumpLength)
             {
@@ -50,7 +41,6 @@ namespace SnotGame.Classes
                 return new Point(0, boost);
             }
             jump = false;
-            jumpBack = true;
             return new Point(0, 0);
         }
 

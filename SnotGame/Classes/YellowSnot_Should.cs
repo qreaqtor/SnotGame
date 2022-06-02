@@ -44,55 +44,5 @@ namespace SnotGame.Classes
             }
             Controller.ResetKeyPressed();
         }
-
-        [Test]
-        public void JumpBackIfSnotIsDown()
-        {
-            var length = 4;
-            var yellowSnot = new YellowSnot();
-            var boost = -20;
-            var boostStep = -20;
-            Controller.OnKeyDown(Keys.Space);
-            yellowSnot.MakeMoves(false);
-            boost += boostStep;
-            for (int i = 1; i < length; i++)
-            {
-                var move = yellowSnot.MakeMoves(i < length);
-                Assert.AreEqual(new Point(0, boost += boostStep), move);
-            }
-            boost = 20;
-            boostStep = 20;
-            for (int i = 0; i < length; i++)
-            {
-                var move = yellowSnot.MakeMoves(i < length);
-                Assert.AreEqual(new Point(0, boost += boostStep), move);
-            }
-            Controller.ResetKeyPressed();
-        }
-
-        [Test]
-        public void JumpBackIfSnotIsUp()
-        {
-            var length = 4;
-            var yellowSnot = new YellowSnot();
-            var boost = 20;
-            var boostStep = 20;
-            Controller.OnKeyDown(Keys.Space);
-            yellowSnot.MakeMoves(true);
-            boost += boostStep;
-            for (int i = 1; i < length; i++)
-            {
-                var move = yellowSnot.MakeMoves(i < length);
-                Assert.AreEqual(new Point(0, boost += boostStep), move);
-            }
-            boost = -20;
-            boostStep = -20;
-            for (int i = 0; i < length; i++)
-            {
-                var move = yellowSnot.MakeMoves(i < length);
-                Assert.AreEqual(new Point(0, boost += boostStep), move);
-            }
-            Controller.ResetKeyPressed();
-        }
     }
 }

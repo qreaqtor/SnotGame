@@ -8,7 +8,7 @@ namespace SnotGame.Classes
     {
         private List<(Picture Picture, Point Location)> barriers;
         private Hero hero;
-        private int BarrierMove;
+        private int barrierMove;
         private readonly VerticalBrick verticalBrick;
         private readonly HorizontalBrick horizontalBrick;
         private readonly Pipe pipe;
@@ -42,19 +42,19 @@ namespace SnotGame.Classes
             switch (newHero)
             {
                 case Hero.Suit:
-                    BarrierMove = Game.PipeMove;
+                    barrierMove = Game.PipeMove;
                     hero = Hero.Suit;
                     break;
                 case Hero.UFO:
-                    BarrierMove = Game.FireballMove;
+                    barrierMove = Game.FireballMove;
                     hero = Hero.UFO;
                     break;
                 case Hero.GreenSnot:
-                    BarrierMove = Game.HorizontalBrickMove;
+                    barrierMove = Game.HorizontalBrickMove;
                     hero = Hero.GreenSnot;
                     break;
                 case Hero.YellowSnot:
-                    BarrierMove = Game.VerticaLBrickMove;
+                    barrierMove = Game.VerticaLBrickMove;
                     hero = Hero.YellowSnot;
                     break;
             }
@@ -99,7 +99,7 @@ namespace SnotGame.Classes
             if (create)
                 CreateBarriers();
             for (int i = 0; i < barriers.Count; i++)
-                barriers[i] = (barriers[i].Picture, new Point(barriers[i].Location.X - BarrierMove, barriers[i].Location.Y));
+                barriers[i] = (barriers[i].Picture, new Point(barriers[i].Location.X - barrierMove, barriers[i].Location.Y));
             DeleteBarriers();
             foreach (var e in barriers)
                 Drawer.ToDraw.Add(e);

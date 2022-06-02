@@ -2,7 +2,7 @@
 
 namespace SnotGame.Classes
 {
-    public class Player : IPlayer
+    public class Player
     {
         private Hero hero;
         private Picture picture;
@@ -29,7 +29,7 @@ namespace SnotGame.Classes
         public Size Size => new Size(Width, Height);
         public Hero Hero => hero;
 
-        public Point MakeMoves(bool canDown)
+        private Point MakeMoves(bool canDown)
         {
             switch(hero)
             {
@@ -46,7 +46,7 @@ namespace SnotGame.Classes
             };
         }
 
-        public Picture MakePictureMoves()
+        private Picture MakePictureMoves()
         {
             switch(hero)
             {
